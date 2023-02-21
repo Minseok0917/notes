@@ -212,3 +212,54 @@ PWA 에서 서비스 워커를 사용하여 데이터 캐싱기능을 해줌
 최대한 적을수록 HTTP 요청에 대한 부담이 줄어드나봄
 
 ### Low Priority
+
+## Pre-load URLs where possible
+
+- URL 미리로드
+
+`Prefetching` 을 사용하면 필요한 리소르를 브라우저에서 자동으로 가져올 수 있으며,  
+리소스가 캐시에 저장하여 웹 페이지 로드 속도를 높일 수 있다.
+
+## Concatenate CSS into a single file
+
+- CSS 연결
+
+HTTP2 를 사용한다
+
+## Remove unused CSS
+
+- 사용하지 않는 CSS 제거
+
+사용하지 않은 CSS 를 제거하여 파일 크기를 줄일 수 있다.
+
+## Use WOFF2 font format
+
+- WOFF 2.0 웹폰트를 사용하기
+
+구글에서는 WOFF 2.0 웹 글꼴 압축 형식이 WOFF 1.0 에 비해 30% 의 향상된 성능을 제공한다.  
+그 다음에 WOFF 2.0 => WOFF 1.0 => TTF 를 사용하는걸 권장하고 있다.
+
+## Use preconnect to load your fonts faster
+
+- 글꼴에 대한 사전 연결
+
+글꼴을 사전에 미리 연결하면 성능 향상을 볼 수 있다.
+
+## Keep the web font size under 300kb
+
+- 웹 글꼴 크기를 300KB 미만으로 유지
+
+글꼴이 많을 수록 다운로드 속도가 느리게 걸려서 렌더링도 느려진다.  
+예전에 NotoSansKR 를 사용할 때 많이 사용하는 폰트만 모아둔걸 사용한 적이 있음
+
+## Prevent Flash or Invisible Text
+
+- 플래시 텍스트 방지
+
+웹폰트가 로드될 때 까지 투명한 텍스트는 사용하지 않는다
+
+## Keep an eye on the size of dependencies
+
+- 종속성 크기 확인하기
+
+사용하고 있는 라이브러리의 크기를 확인해서 가벼운 라이브러리 변경 할 수 도 있다.
