@@ -1,6 +1,6 @@
 learning address : https://roadmap.sh/best-practices/frontend-performance
 
-#### `High Priority`
+### High Priority
 
 ## Minimize number of iframes
 
