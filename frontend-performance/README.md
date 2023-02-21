@@ -120,3 +120,95 @@ HTTP 는 HTTP 가 사용하고 HTTPS 는 HTTPS 에서 사용해야된다.
 - 압축해라
 
 압축을 하여 JS 파일의 크기를 줄여서 성능을 향상시킨다.
+
+### Medium Priority
+
+## Minified HTML - Remove comments and whitespaces
+
+- HTML 축소
+
+공백, 주석, 속성들을 모두 제거하여 HTML의 크기를 줄인다.
+
+## Use Content Delivery Network
+
+- CDN 사용
+
+CDN 을 사용하여 정적 자산을 제공하여 서버의 부하를 줄이고 성능이 향상된다.  
+또는 나라별 JS 가져오는 속도에서도 차이가 있었던거 같음
+
+## Prefer using vector image rather than bitmap images
+
+- 벡터 이미시를 선호한다.
+
+벡터 이미지(SVG)는 이미지보다 작은 경향이 있으며, 확장 및 CSS 적용에 좋다.
+
+## Set width and height attributes on images (aspect ratio)
+
+- 이미지의 크기 설정
+
+이미지의 높이와 너비를 설정하면 페이지가 로드 될 때 이미지에 필요한 공간이 예약된다.  
+단 설정하지 않았을 경우 모든 적정한 공간을 예약할 수 없으며 페이지 레이아웃이 변경된다.
+
+## Avoid using Base64 images
+
+- base64 이미지는 피하기
+
+1. base64 이미지는 바이너리 이미지보다 크기 떄문에 로딩이 느리다.
+2. html, css 에 base64 주소가 들어갈 경우 용량이 커져 로드가 느려진다.
+3. base64 는 별도의 리소스가 아니기 때문에 캐싱을 할 수 없다.
+4. base64 는 이전 브라우저가 호환이 되지 않을 수도 있다.
+
+## Offscreen images are loaded lazily
+
+- 지연로딩
+
+응답 시간을 개선하고, 사용자에게 필요하지 않을 수 있는 이미지를 로드하지 않는다.
+
+## Ensure to serve images that are close to your display size
+
+- 반응형 이미지
+
+기기별로 뷰포트보다 큰 이미지는 필요하지 않음  
+`srcset` `picture` 를 사용한다고 함
+
+## Avoid multiple inline JavaScript snippets <script>
+
+- 인라인 자바스크립트 피하기
+
+HTML body element 사이에 script 태그가 있을 시 페이지 로드 속도가 느려질 수 있음  
+만약 사용해야 할 경우 `async` `defer` 를 사용하여 대응할 수 있음
+
+## Keep your dependencies up to date
+
+- 종속성 업데이트
+
+신규 버전에서 최적화 및 보안 수정에 제공되기에 되도록 추천하는 스킬  
+또는 `npm-check` 라이브러리로 상태가 확인이 가능하다.
+
+## Check for performance problems in your JavaScript files
+
+- JS 성능 체크
+
+JS 소스가 복잡할 경우 런타임 성능을 저하시킬 수 있으며,  
+개발자 도구에서 타임라인에서 스크립트 이벤트를 평가하고 제거
+
+## Service Workers for caching / performing heavy tasks
+
+- 서비스 워커 사용하기
+
+PWA 에서 서비스 워커를 사용하여 데이터 캐싱기능을 해줌
+
+## Cookie size should be less than 4096 bytes
+
+- 쿠키 크기 조절하기(4096Byte 이하)
+
+쿠키는 웹 서버와 브라우저 사이의 HTTP 헤더에서 교환되며,  
+크기가 클 경우 응답 시간에 영향을 미칠수 있어서 최대한 크기를 작게 유지해야 한다.
+
+## Keep the cookie count less than 20
+
+- 쿠키 개수 조절(20개 미만)
+
+최대한 적을수록 HTTP 요청에 대한 부담이 줄어드나봄
+
+### Low Priority
